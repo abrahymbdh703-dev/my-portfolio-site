@@ -124,7 +124,7 @@ function Portfolio() {
         .portfolio-container { 
           background-color: var(--bg-main); 
           color: var(--text-main); 
-          min-height: 100vh;
+          min-height: auto;
           transition: background-color 0.4s ease, color 0.4s ease;
         }
         
