@@ -390,14 +390,23 @@ function Portfolio() {
           .nav-links-desktop { display: none; } 
           .menu-toggle { display: block; } 
           .nav-links-mobile { display: flex; } 
+          
           /* معالجة الـ Grid في الموبايلات الصغيرة لتجنب المساحات الفارغة الزائدة */
           .projects-grid {
             grid-template-columns: 1fr;
           }
+          
           .hero-section{
           min-height: auto !important;
           padding :30px 20px !important;
           gap: 20px !important;
+          }
+          body,html{
+          overflow-x: hidden;
+          }
+          main{
+          padding-top: 0 !important;
+          margin-top: 0 !important;
           }
         }
       `}</style>
