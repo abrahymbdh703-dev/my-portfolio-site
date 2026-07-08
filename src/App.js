@@ -113,7 +113,7 @@ function Portfolio() {
   }, [lang]);
 
   return (
-    <div className={`portfolio-container ${isDarkMode ? 'dark-theme' : 'light-theme'} ${isTransitioning ? 'fade-out' : 'fade-in'}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div className={`portfolio-container ${isDarkMode ? 'dark-theme' : 'light-theme'} ${isTransitioning ? 'fade-out' : 'fade-in'}`} dir={lang === 'ar' ? 'rtl' : 'ltr'} style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
       
       <style>{`
         html, body { 
@@ -122,6 +122,7 @@ function Portfolio() {
           box-sizing: border-box;
           overflow-x: hidden !important; 
           width: 100% !important;
+          max-width: 100vw !important;
           font-family: system-ui, -apple-system, sans-serif;
           -webkit-font-smoothing: antialiased;
           scroll-behavior: smooth;
@@ -234,7 +235,7 @@ function Portfolio() {
         .box-content { display: flex; flex-direction: column; align-items: center; gap: 12px; flex-grow: 1; justify-content: center; width: 100%; }
         .box-icon { font-size: 2.2rem; }
         .box-tag { font-family: monospace; font-size: 1rem; font-weight: 700; color: white; }
-        .box-code { font-family: monospace; font-size: 0.7rem; color: #93c5fd; line-height: 1.5; text-align: left; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; width: 100%; direction: ltr; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+        .box-code { font-family: monospace; font-size: 0.7rem; color: #93c5fd; line-height: 1.5; text-align: left; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; width: 100%; direction: ltr; overflow-x: hidden !important; white-space: pre-wrap; word-break: break-all; }
 
         /* Projects Section */
         .projects-section { background-color: var(--bg-card-sub); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 60px 20px; width: 100%; }
@@ -283,13 +284,13 @@ function Portfolio() {
           .menu-toggle { display: block; } 
           .nav-links-mobile { display: flex; } 
           
-          /* إجبار الهيكل بالكامل على البقاء في حدود العرض وبدون ارتفاعات خفية */
           .hero-section {
             flex-direction: column !important;
             min-height: auto !important;
             height: auto !important;
             padding: 32px 16px !important;
             gap: 24px !important;
+            overflow: hidden !important;
           }
 
           .hero-info { 
@@ -317,18 +318,21 @@ function Portfolio() {
             width: 100% !important;
             justify-content: center !important;
             margin-top: 8px !important;
+            overflow: hidden !important;
           }
 
           .interactive-blue-box {
-            max-width: 290px !important;
-            height: 310px !important;
-            padding: 16px !important;
+            max-width: 280px !important;
+            height: 290px !important;
+            padding: 14px !important;
+            overflow: hidden !important;
           }
           
           .box-code {
             font-size: 0.65rem !important;
             white-space: pre-wrap !important;
             word-break: break-all !important;
+            overflow: hidden !important;
           }
 
           .projects-section { padding: 40px 16px !important; }
@@ -375,7 +379,7 @@ function Portfolio() {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="hero-section">
+      <section id="hero" className="hero-section" style={{ overflow: 'hidden' }}>
         <div className="hero-info">
           <div className="badge">{t.badge}</div>
           <h1 className="hero-title">{t.title}</h1>
@@ -387,9 +391,9 @@ function Portfolio() {
           </div>
         </div>
 
-        <div className="hero-graphic-container">
+        <div className="hero-graphic-container" style={{ overflow: 'hidden' }}>
           <div className="blue-box-glow"></div>
-          <div className="interactive-blue-box">
+          <div className="interactive-blue-box" style={{ overflow: 'hidden' }}>
             <div className="browser-dots">
               <span className="dot red"></span>
               <span className="dot yellow"></span>
@@ -399,10 +403,8 @@ function Portfolio() {
               <div className="box-icon">📦</div>
               <div className="box-tag">&lt;frontend/&gt;</div>
               <pre className="box-code">
-{`// Contentful CDA Delivery
-const space = '${SPACE_ID.substring(0,6)}...';
-const environment = 'master';
-const response = 'JSON Content';`}
+{`const space = '${SPACE_ID.substring(0,6)}...';
+const env = 'master';`}
               </pre>
             </div>
           </div>
