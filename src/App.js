@@ -278,7 +278,7 @@ function Portfolio() {
         
         .footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); font-size: 0.75rem; font-weight: 500; color: var(--text-sub); background-color: var(--bg-card); line-height: 1.4; width: 100%; }
 
-        /* تدمير وحل مشكلة الموبايل بشكل صارم وحتمي (شاشات أقل من 768px) */
+        /* تقليل أقصى وبتر كامل لأي زوائد تسبب مساحات فارغة على الموبايل */
         @media (max-width: 768px) { 
           .nav-links-desktop { display: none; } 
           .menu-toggle { display: block; } 
@@ -288,8 +288,8 @@ function Portfolio() {
             flex-direction: column !important;
             min-height: auto !important;
             height: auto !important;
-            padding: 32px 16px !important;
-            gap: 24px !important;
+            padding: 16px 8px !important; /* تصفير المساحات المحيطة بالـ Hero */
+            gap: 12px !important;
             overflow: hidden !important;
           }
 
@@ -297,51 +297,59 @@ function Portfolio() {
             width: 100% !important; 
             text-align: center !important; 
             align-items: center !important; 
+            gap: 10px !important; /* تضييق المسافات بين النصوص */
           }
           
-          .hero-title { font-size: 1.85rem !important; }
-          .hero-subtitle { font-size: 1.15rem !important; }
-          .hero-desc { font-size: 0.9rem !important; }
+          .hero-title { font-size: 1.6rem !important; }
+          .hero-subtitle { font-size: 1rem !important; }
+          .hero-desc { font-size: 0.85rem !important; margin: 0 !important; }
           
           .hero-cta { 
             flex-direction: column !important; 
             width: 100% !important; 
             align-items: center !important; 
+            gap: 8px !important;
           }
           
           .btn { 
             width: 100% !important; 
-            max-width: 280px !important; 
+            max-width: 250px !important; 
+            padding: 10px 16px !important; /* تقليل حجم الأزرار */
           }
 
           .hero-graphic-container {
             width: 100% !important;
             justify-content: center !important;
-            margin-top: 8px !important;
+            margin-top: 4px !important;
+            height: auto !important;
             overflow: hidden !important;
           }
 
+          /* تقليل حجم الصندوق ليكون صغيراً جداً ومستحيلاً أن يمد الشاشة */
           .interactive-blue-box {
-            max-width: 280px !important;
-            height: 290px !important;
-            padding: 14px !important;
+            max-width: 190px !important;
+            height: 180px !important;
+            padding: 8px !important;
+            border-radius: 12px !important;
             overflow: hidden !important;
           }
           
+          .browser-dots { margin-bottom: 4px !important; }
+          .dot { width: 6px !important; height: 6px !important; }
+          .box-icon { font-size: 1.3rem !important; }
+          .box-tag { font-size: 0.75rem !important; }
+
           .box-code {
-            font-size: 0.65rem !important;
-            white-space: pre-wrap !important;
-            word-break: break-all !important;
-            overflow: hidden !important;
+            display: none !important; /* إخفاء كود الـ pre تماماً على الموبايل لضمان تصفير المساحة */
           }
 
-          .projects-section { padding: 40px 16px !important; }
-          .section-header { text-align: center !important; margin-bottom: 24px !important; }
-          .section-header h2 { font-size: 1.6rem !important; }
-          .projects-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .projects-section { padding: 24px 12px !important; }
+          .section-header { text-align: center !important; margin-bottom: 16px !important; }
+          .section-header h2 { font-size: 1.4rem !important; }
+          .projects-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
           
-          .contact-section { padding: 40px 16px !important; }
-          .contact-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+          .contact-section { padding: 24px 12px !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
         }
       `}</style>
 
