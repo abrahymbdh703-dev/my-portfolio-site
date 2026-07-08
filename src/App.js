@@ -386,7 +386,7 @@ function Portfolio() {
         }
         
         /* التعامل مع القائمة المنبثقة لشاشات الموبايل */
-        @media (max-width: 600px) { 
+        @media (max-width: 300px) { 
           .nav-links-desktop { display: none; } 
           .menu-toggle { display: block; } 
           .nav-links-mobile { display: flex; } 
