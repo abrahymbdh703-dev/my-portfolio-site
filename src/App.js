@@ -194,13 +194,13 @@ function Portfolio() {
         .hero-section { 
           max-width: 1140px; 
           margin: 0 auto; 
-          padding: 40px 20px 60px 20px; 
+          padding: 40px 20px; 
           display: flex; 
           flex-direction: column; 
           align-items: center; 
           justify-content: center; 
           gap: 40px; 
-          min-height: calc(100vh - 80px); 
+          min-height: 100dvh; 
         }
         .hero-info { width: 100%; display: flex; flex-direction: column; gap: 20px; text-align: center; align-items: center; }
         .badge { display: inline-block; background-color: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); color: #3b82f6; padding: 6px 14px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; animation: pulseGlow 2s infinite; width: fit-content; max-width: 100%; }
@@ -386,13 +386,18 @@ function Portfolio() {
         }
         
         /* التعامل مع القائمة المنبثقة لشاشات الموبايل */
-        @media (max-width: 767px) { 
+        @media (max-width: 768px) { 
           .nav-links-desktop { display: none; } 
           .menu-toggle { display: block; } 
           .nav-links-mobile { display: flex; } 
           /* معالجة الـ Grid في الموبايلات الصغيرة لتجنب المساحات الفارغة الزائدة */
           .projects-grid {
             grid-template-columns: 1fr;
+          }
+          .hero-section{
+          min-height: auto !important;
+          padding :30px 20px !important;
+          gap: 20px !important;
           }
         }
       `}</style>
