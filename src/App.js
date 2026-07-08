@@ -237,13 +237,13 @@ function Portfolio() {
         .section-header h2 { font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px; letter-spacing: -0.02em; }
         .section-header p { color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; }
         
-        /* جعل الـ Grid يتجاوب بشكل مرن جداً من شاشات الموبايل الصغيرة للـ Laptops */
+        /* تم إصلاح المسافة المفرطة هنا عبر جعل الـ gap متجاوباً */
         .projects-grid { 
           max-width: 1140px; 
           margin: 0 auto; 
           display: grid; 
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-          gap: 130px; 
+          gap: 24px; 
         }
         
         /* Project Cards */
@@ -378,6 +378,7 @@ function Portfolio() {
           .hero-title { font-size: 3rem; } 
           .section-header { text-align: start; }
           .section-header h2 { font-size: 2.25rem; }
+          .projects-grid { gap: 32px; } /* تباعد مريح ومتناسق للشاشات الكبيرة */
         }
         
         /* لشاشات اللاب توب الكبيرة والـ HD */
@@ -391,26 +392,26 @@ function Portfolio() {
           .menu-toggle { display: block; } 
           .nav-links-mobile { display: flex; } 
           
-          /* معالجة الـ Grid في الموبايلات الصغيرة لتجنب المساحات الفارغة الزائدة */
           .projects-grid {
             grid-template-columns: 1fr;
+            gap: 20px; /* مسافة متناسقة جداً ومريحة للموبايل */
           }
           
-          .hero-section{
-          min-height: auto !important;
-          height: auto !important;
-          padding :60px 20px 40px 20px !important;
-          display: flex !important;
-          flex-direction: column !important;
-          justify-content: flex-start !important;
-          gap: 20px !important;
+          .hero-section {
+            min-height: auto !important;
+            height: auto !important;
+            padding: 40px 20px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            gap: 24px !important;
           }
-          body,html{
-          overflow-x: hidden;
+          body, html {
+            overflow-x: hidden;
           }
-          main{
-          padding-top: 0 !important;
-          margin-top: 0 !important;
+          main {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
           }
         }
       `}</style>
