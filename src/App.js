@@ -390,9 +390,37 @@ function Portfolio() {
           height: auto !important;
           padding :70px 15px 20px 15px !important;
           display: flex !important;
-          flex-direction: column !important;
-          justify-content: flex-start !important;
+          flex-direction: row-reverse !important;
+          align-items: center !important;
+          justify-content: space-between !important;
           gap: 15px !important;
+          text-align: right !important;
+          }
+          .hero-text{
+          flex:1;
+          }
+          .hero-title{
+          font-size:1.2rem !important;
+          }
+          .hero-subtitle{
+          font-size:0.8rem !important;
+          }
+          .hero-description{
+          font-size:0.75rem !important;
+          }
+          .hero-buttons{
+          flex-direction: row !important;
+          gap:8px !important;
+          }
+          .projects-section{
+          padding:25px 15px !important;
+          }
+          .interactive-blue-box{
+          max-width:140px !important;
+          height:140px !important;
+          padding:8px !important;
+          flex-shrink:0;
+          }
           }
           body,html{
           overflow-x: hidden;
@@ -400,7 +428,6 @@ function Portfolio() {
           main{
           padding-top: 0 !important;
           margin-top: 0 !important;
-          }
         }
       `}</style>
 
