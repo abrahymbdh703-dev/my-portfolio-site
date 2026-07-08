@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 // إعدادات Contentful
@@ -118,15 +119,13 @@ function Portfolio() {
       <style>{`
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: system-ui, -apple-system, sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; width: 100%; }
+        body { font-family: system-ui, -apple-system, sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         
         .portfolio-container { 
           background-color: var(--bg-main); 
           color: var(--text-main); 
           min-height: 100vh;
           transition: background-color 0.4s ease, color 0.4s ease;
-          width: 100%;
-          overflow-x: hidden;
         }
         
         .fade-in { opacity: 1; transition: opacity 0.25s ease; }
@@ -202,7 +201,7 @@ function Portfolio() {
           align-items: center; 
           justify-content: center; 
           gap: 40px; 
-          min-height: 100vh; 
+          min-height: 100dvh; 
         }
         .hero-info { width: 100%; display: flex; flex-direction: column; gap: 20px; text-align: center; align-items: center; }
         .badge { display: inline-block; background-color: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); color: #3b82f6; padding: 6px 14px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; animation: pulseGlow 2s infinite; width: fit-content; max-width: 100%; }
@@ -211,6 +210,7 @@ function Portfolio() {
         .hero-subtitle { font-size: 1.15rem; font-weight: 700; background: linear-gradient(to right, #3b82f6, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.3; }
         .hero-desc { color: var(--text-sub); font-size: 0.95rem; line-height: 1.6; max-width: 500px; }
         
+        /* تحسين أزرار الـ CTA للموبايلات الصغيرة جداً */
         .hero-cta { display: flex; flex-direction: column; gap: 12px; justify-content: center; width: 100%; align-items: center; }
         .btn { display: inline-block; text-decoration: none; padding: 14px 24px; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; text-align: center; width: 100%; max-width: 280px; font-size: 0.95rem; }
         .btn-primary { background: linear-gradient(to right, #3b82f6, #2563eb); color: white; box-shadow: 0 10px 20px -3px rgba(37, 99, 235, 0.3); }
@@ -238,13 +238,13 @@ function Portfolio() {
         .section-header h2 { font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px; letter-spacing: -0.02em; }
         .section-header p { color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; }
         
-        /* تعديل الـ gap ليكون متجاوباً بدلاً من الـ 130px الثابتة */
+        /* جعل الـ Grid يتجاوب بشكل مرن جداً من شاشات الموبايل الصغيرة للـ Laptops */
         .projects-grid { 
           max-width: 1140px; 
           margin: 0 auto; 
           display: grid; 
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-          gap: 24px;  
+          gap: 130px; 
         }
         
         /* Project Cards */
@@ -261,6 +261,7 @@ function Portfolio() {
           position: relative;
           box-shadow: 0 4px 6px -1px var(--shadow-color);
           transition: all 0.4s cubic-bezier(0.16,  1,  0.3,  1);
+          break-inside: avoid;
         }
         .project-card:hover { 
           transform: translateY(-6px); 
@@ -347,6 +348,7 @@ function Portfolio() {
         .contact-section { max-width: 1140px; margin: 0 auto; padding: 60px 20px; }
         .center { text-align: center; }
         
+        /* جعل شبكة التواصل تتكيف مع أحجام الهواتف الصغيرة وتمنع الخروج عن الشاشة */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
         .contact-card { background-color: var(--bg-card); border: 1px solid var(--border); padding: 24px 16px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 6px -1px var(--shadow-color); text-align: center; transition: all 0.3s ease; word-break: break-word; }
         .contact-card:hover { box-shadow: 0 20px 25px -5px var(--shadow-color); transform: translateY(-4px); border-color: #3b82f6; }
@@ -359,13 +361,13 @@ function Portfolio() {
         
         .footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); font-size: 0.75rem; font-weight: 500; color: var(--text-sub); background-color: var(--bg-card); line-height: 1.4; }
 
-        /* Media Queries للشاشات المتوسطة */
+        /* Media Queries للشاشات المتوسطة (أجهزة التابلت والموبايل العريض) */
         @media (min-width: 480px) {
           .hero-title { font-size: 2.2rem; }
           .hero-cta { flex-direction: row; }
         }
         
-        /* Media Queries لشاشات اللاب توب والحواسب */
+        /* Media Queries لشاشات اللاب توب والحواسب (Desktops / Laptops) */
         @media (min-width: 768px) { 
           .menu-toggle { display: none; } 
           .hero-section { flex-direction: row; padding: 60px 24px; gap: 32px; } 
@@ -377,7 +379,6 @@ function Portfolio() {
           .hero-title { font-size: 3rem; } 
           .section-header { text-align: start; }
           .section-header h2 { font-size: 2.25rem; }
-          .projects-grid { gap: 32px; } /* مسافة أكبر متناسقة مع الشاشات الكبيرة */
         }
         
         /* لشاشات اللاب توب الكبيرة والـ HD */
@@ -391,25 +392,26 @@ function Portfolio() {
           .menu-toggle { display: block; } 
           .nav-links-mobile { display: flex; } 
           
+          /* معالجة الـ Grid في الموبايلات الصغيرة لتجنب المساحات الفارغة الزائدة */
           .projects-grid {
             grid-template-columns: 1fr;
           }
           
           .hero-section{
-            min-height: auto !important;
-            height: auto !important;
-            padding :60px 20px 40px 20px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: flex-start !important;
-            gap: 20px !important;
+          min-height: auto !important;
+          height: auto !important;
+          padding :60px 20px 40px 20px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: flex-start !important;
+          gap: 20px !important;
           }
           body,html{
-            overflow-x: hidden;
+          overflow-x: hidden;
           }
           main{
-            padding-top: 0 !important;
-            margin-top: 0 !important;
+          padding-top: 0 !important;
+          margin-top: 0 !important;
           }
         }
       `}</style>
