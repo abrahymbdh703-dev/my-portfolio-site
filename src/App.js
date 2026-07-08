@@ -398,7 +398,11 @@ function Portfolio() {
           
           .hero-section{
           min-height: auto !important;
-          padding :30px 20px !important;
+          height: auto !important;
+          padding :60px 20px 40px 20px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: flex-start !important;
           gap: 20px !important;
           }
           body,html{
