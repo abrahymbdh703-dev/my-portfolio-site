@@ -402,7 +402,13 @@ function Portfolio() {
             grid-template-columns: 1fr;
           }
           .navbar{
-              padding: 10px 15px !important;
+              padding: fixed !important;
+              top:0 !important;
+              left:0 !important;
+              width:100% !important;
+              padding: 12px 15px !important;
+              background: #0a0fle !important;
+              z-index:9999;
               }
               main{
               padding-top:60px !important;
@@ -410,39 +416,55 @@ function Portfolio() {
           
           .hero-section{
           min-height: auto !important;
-          height: auto !important;
-          padding :90px 15px 20px 15px !important;
+          padding :70px 15px 25px 15px !important;
           display: flex !important;
           flex-direction: row-reverse !important;
           align-items: flex-start !important;
           justify-content: space-between !important;
-          gap: 10px !important;
+          gap: 12px !important;
           text-align: right !important;
+          background:#0a0fle !important;
           }
           .hero-text{
           flex:1;
           margin-top:0 !important;
           }
           .hero-title{
-          font-size:1.1rem !important;
+          font-size:1.6rem !important;
+          font-weight:800 !important;
+          line-height: 1.2 !important;
+          margin-bottom:8px !important;
+          color:white !important;
           }
           .hero-subtitle{
-          font-size:0.75rem !important;
+          font-size:0.85rem !important;
+          color: #60a5fa !important;
           }
           .hero-description{
-          font-size:0.75rem !important;
+          font-size:0.8rem !important;
+          line-height: 1.5 !important;
+          margin-bottom:12px !important;
+          color: #cbd5e1 !important;
           }
           .hero-buttons{
-          flex-direction: row !important;
+          flex-direction: column !important;
           gap:8px !important;
+          }
+          .hero-buttons a{
+               width: 100% !important;
+               padding: 10px !important;
+               border-radius: 8px !important;
+               font-size: 0.85rem !important;
           }
           .projects-section{
           padding:25px 15px !important;
           }
           .interactive-blue-box{
-          max-width:140px !important;
-          height:140px !important;
-          padding:8px !important;
+          max-width:100px !important;
+          height:100px !important;
+          padding:6px !important;
+          margin-top:0 !important;
+          align-self: flex-start !important;
           flex-shrink:0;
           }
           }
