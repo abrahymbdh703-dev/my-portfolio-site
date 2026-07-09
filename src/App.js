@@ -155,7 +155,24 @@ function Portfolio() {
         }
 
         /* Navbar */
-        .navbar { position: fixed !important; top: 0; z-index: 9999 !important; background-color: var(--nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; max-width: 1140px; margin: 0 auto; padding: 16px 24px; gap: 12px; }
+        .navbar { 
+            position: fixed !important; 
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width:100vw !important;
+            z-index: 9999 !important;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%px; 
+            margin: 0 !important; 
+            padding: 12px 20px; 
+            gap: 12px; 
+            }
         .nav-brand { font-size: 1.25rem; font-weight: 900; letter-spacing: 0.05em; color: var(--text-main); min-width: auto; white-space: nowrap; }
         .nav-brand span { color: #3b82f6; }
         .nav-right { display: flex; align-items: center; gap: 10px; }
@@ -384,6 +401,12 @@ function Portfolio() {
           .projects-grid {
             grid-template-columns: 1fr;
           }
+          .navbar{
+              padding: 10px 15px !important;
+              }
+              main{
+              padding-top:60px !important;
+              }
           
           .hero-section{
           min-height: auto !important;
