@@ -402,7 +402,7 @@ function Portfolio() {
             grid-template-columns: 1fr;
           }
           .navbar{
-              padding: fixed !important;
+              position: fixed !important;
               top:0 !important;
               left:0 !important;
               width:100% !important;
@@ -416,12 +416,12 @@ function Portfolio() {
           
           .hero-section{
           min-height: auto !important;
-          padding :70px 15px 25px 15px !important;
+          padding :60px 12px 15px 12px !important;
           display: flex !important;
           flex-direction: row-reverse !important;
           align-items: flex-start !important;
           justify-content: space-between !important;
-          gap: 12px !important;
+          gap: 10px !important;
           text-align: right !important;
           background:#0a0fle !important;
           }
@@ -460,8 +460,8 @@ function Portfolio() {
           padding:25px 15px !important;
           }
           .interactive-blue-box{
-          max-width:100px !important;
-          height:100px !important;
+          max-width:85px !important;
+          height:85px !important;
           padding:6px !important;
           margin-top:0 !important;
           align-self: flex-start !important;
