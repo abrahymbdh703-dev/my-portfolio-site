@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 
 // إعدادات Contentful
@@ -156,23 +155,20 @@ function Portfolio() {
 
         /* Navbar */
         .navbar { 
-            position: fixed !important; 
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            width:100vw !important;
-            z-index: 9999 !important;
-            background-color: var(--nav-bg);
-            backdrop-filter: blur(12px); 
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 100%px; 
-            margin: 0 !important; 
-            padding: 12px 20px; 
-            gap: 12px; 
-            }
+          position: fixed !important; 
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          z-index: 9999 !important;
+          background-color: var(--nav-bg);
+          backdrop-filter: blur(12px); 
+          border-bottom: 1px solid var(--border);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 20px; 
+          gap: 12px; 
+        }
         .nav-brand { font-size: 1.25rem; font-weight: 900; letter-spacing: 0.05em; color: var(--text-main); min-width: auto; white-space: nowrap; }
         .nav-brand span { color: #3b82f6; }
         .nav-right { display: flex; align-items: center; gap: 10px; }
@@ -208,14 +204,24 @@ function Portfolio() {
         .nav-links-mobile.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
         .nav-links-mobile a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 1rem; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.02); }
 
+        /* Hero Section Base */
+        .hero-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 100px 20px 40px 20px;
+          gap: 30px;
+          min-height: 80vh;
+        }
+
         .hero-info { width: 100%; display: flex; flex-direction: column; gap: 20px; text-align: center; align-items: center; }
         .badge { display: inline-block; background-color: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); color: #3b82f6; padding: 6px 14px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; animation: pulseGlow 2s infinite; width: fit-content; max-width: 100%; }
         @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-        .hero-title { font-size: 1.6rem; font-weight: 900; color: var(--text-main); line-height: 1.2; letter-spacing: -0.02em; word-break: break-word; }
-        .hero-subtitle { font-size: 1rem; font-weight: 700; background: linear-gradient(to right, #3b82f6, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.3; }
+        .hero-title { font-size: 2rem; font-weight: 900; color: var(--text-main); line-height: 1.2; letter-spacing: -0.02em; word-break: break-word; }
+        .hero-subtitle { font-size: 1.1rem; font-weight: 700; background: linear-gradient(to right, #3b82f6, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.3; }
         .hero-desc { color: var(--text-sub); font-size: 0.95rem; line-height: 1.6; max-width: 500px; }
         
-        /* تحسين أزرار الـ CTA للموبايلات الصغيرة جداً */
         .hero-cta { display: flex; flex-direction: column; gap: 12px; justify-content: center; width: 100%; align-items: center; }
         .btn { display: inline-block; text-decoration: none; padding: 14px 24px; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; text-align: center; width: 100%; max-width: 280px; font-size: 0.95rem; }
         .btn-primary { background: linear-gradient(to right, #3b82f6, #2563eb); color: white; box-shadow: 0 10px 20px -3px rgba(37, 99, 235, 0.3); }
@@ -225,31 +231,31 @@ function Portfolio() {
 
         /* Hero Graphic */
         .hero-graphic-container { width: 100%; display: flex; justify-content: center; position: relative; max-width: 100%; }
-        .interactive-blue-box { position: relative; width: 100%; max-width: 280px; height: 280px; background-color: #1a202c; border-radius: 20px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 25px 50px -12px var(--shadow-color); transition: all 0.3s ease; }
+        .interactive-blue-box { position: relative; width: 100%; max-width: 320px; height: 320px; background-color: #1a202c; border-radius: 20px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 25px 50px -12px var(--shadow-color); transition: all 0.3s ease; }
         .interactive-blue-box:hover { transform: scale(1.02) rotate(-0.5deg); }
         .blue-box-glow { position: absolute; inset: -4px; background: linear-gradient(to right, #3b82f6, #6366f1); border-radius: 20px; filter: blur(12px); opacity: 0.2; }
         .browser-dots { display: flex; gap: 6px; opacity: 0.7; margin-bottom: 12px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; }
         .red { background-color: #ef4444; } .yellow { background-color: #eab308; } .green { background-color: #22c55e; }
         .box-content { display: flex; flex-direction: column; align-items: center; gap: 12px; flex-grow: 1; justify-content: center; width: 100%; }
-        .box-icon { font-size: 1.8rem; animation: float 3s infinite ease-in-out; }
+        .box-icon { font-size: 2.2rem; animation: float 3s infinite ease-in-out; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-        .box-tag { font-family: monospace; font-size: 0.9rem; font-weight: 700; color: white; }
-        .box-code { font-family: monospace; font-size: 0.7rem; color: #93c5fd; line-height: 1.5; text-align: left; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; width: 100%; direction: ltr; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+        .box-tag { font-family: monospace; font-size: 1rem; font-weight: 700; color: white; }
+        .box-code { font-family: monospace; font-size: 0.75rem; color: #93c5fd; line-height: 1.5; text-align: left; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; width: 100%; direction: ltr; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
 
         /* Projects Section */
-        .projects-section { background-color: var(--bg-card-sub); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 20px; }
+        .projects-section { background-color: var(--bg-card-sub); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 60px 20px; }
         .section-header { max-width: 1140px; margin: 0 auto 40px auto; text-align: center; padding: 0 10px; }
-        .section-header h2 { font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px; letter-spacing: -0.02em; }
-        .section-header p { color: var(--text-sub); font-size: 0.9rem; line-height: 1.5; }
+        .section-header h2 { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px; letter-spacing: -0.02em; }
+        .section-header p { color: var(--text-sub); font-size: 0.95rem; line-height: 1.5; }
         
-        /* جعل الـ Grid يتجاوب بشكل مرن جداً من شاشات الموبايل الصغيرة للـ Laptops */
+        /* الـ Grid لعرض الكروت متقاربة */
         .projects-grid { 
           max-width: 1140px; 
           margin: 0 auto; 
           display: grid; 
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-          gap: 130px; 
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+          gap: 30px; 
         }
         
         /* Project Cards */
@@ -257,7 +263,7 @@ function Portfolio() {
           background-color: var(--bg-card); 
           border: 1px solid var(--border); 
           border-radius: 20px; 
-          padding: 18px; 
+          padding: 24px; 
           display: flex; 
           flex-direction: column; 
           justify-content: space-between; 
@@ -266,7 +272,6 @@ function Portfolio() {
           position: relative;
           box-shadow: 0 4px 6px -1px var(--shadow-color);
           transition: all 0.4s cubic-bezier(0.16,  1,  0.3,  1);
-          break-inside: avoid;
         }
         .project-card:hover { 
           transform: translateY(-6px); 
@@ -276,7 +281,7 @@ function Portfolio() {
         
         .project-preview { 
           width: 100%; 
-          height: 140px; 
+          height: 160px; 
           background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); 
           border: 1px solid var(--border);
           border-radius: 14px; 
@@ -307,18 +312,18 @@ function Portfolio() {
           background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
         }
         .project-card:hover .project-preview::before { opacity: 1; }
-        .preview-icon { font-size: 2.2rem; margin-bottom: 6px; transition: transform 0.3s ease; }
+        .preview-icon { font-size: 2.5rem; margin-bottom: 6px; transition: transform 0.3s ease; }
         .project-card:hover .preview-icon { transform: scale(1.1) rotate(5deg); }
 
         .project-info-wrapper {
           display: flex;
           flex-direction: column;
-          gap: 8px;
-          margin-bottom: 12px;
+          gap: 12px;
+          margin-bottom: 16px;
         }
 
-        .project-body h3 { font-size: 1.25rem; color: var(--text-main); font-weight: 800; line-height: 1.3; word-break: break-word; }
-        .project-body p { color: var(--text-sub); font-size: 0.875rem; line-height: 1.6; }
+        .project-body h3 { font-size: 1.35rem; color: var(--text-main); font-weight: 800; line-height: 1.3; word-break: break-word; }
+        .project-body p { color: var(--text-sub); font-size: 0.9rem; line-height: 1.6; }
         
         .project-link { 
           text-decoration: none; 
@@ -350,12 +355,11 @@ function Portfolio() {
         @keyframes spin { to { transform: rotate(360deg); } }
 
         /* Contact Section */
-        .contact-section { max-width: 1140px; margin: 0 auto; padding: 40px 20px; }
+        .contact-section { max-width: 1140px; margin: 0 auto; padding: 60px 20px; }
         .center { text-align: center; }
         
-        /* جعل شبكة التواصل تتكيف مع أحجام الهواتف الصغيرة وتمنع الخروج عن الشاشة */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-        .contact-card { background-color: var(--bg-card); border: 1px solid var(--border); padding: 18px 14px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 6px -1px var(--shadow-color); text-align: center; transition: all 0.3s ease; word-break: break-word; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .contact-card { background-color: var(--bg-card); border: 1px solid var(--border); padding: 24px 16px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 6px -1px var(--shadow-color); text-align: center; transition: all 0.3s ease; word-break: break-word; }
         .contact-card:hover { box-shadow: 0 20px 25px -5px var(--shadow-color); transform: translateY(-4px); border-color: #3b82f6; }
         .card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; min-width: 48px; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 12px; flex-shrink: 0; }
         .blue { background-color: rgba(59, 130, 246, 0.15); color: #3b82f6; }
@@ -364,116 +368,53 @@ function Portfolio() {
         .contact-card h4 { font-size: 0.75rem; color: var(--text-sub); text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em; }
         .contact-card p, .contact-card a { font-size: 0.95rem; font-weight: 800; color: var(--text-main); text-decoration: none; word-break: break-all; }
         
-        .footer { text-align: center; padding: 18px; border-top: 1px solid var(--border); font-size: 0.75rem; font-weight: 500; color: var(--text-sub); background-color: var(--bg-card); line-height: 1.4; }
+        .footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); font-size: 0.8rem; font-weight: 500; color: var(--text-sub); background-color: var(--bg-card); line-height: 1.4; }
 
-        /* Media Queries للشاشات المتوسطة (أجهزة التابلت والموبايل العريض) */
+        /* الشاشات المتوسطة والصغيرة */
         @media (min-width: 480px) {
-          .hero-title { font-size: 2.2rem; }
+          .hero-title { font-size: 2.5rem; }
           .hero-cta { flex-direction: row; }
         }
         
-        /* Media Queries لشاشات اللاب توب والحواسب (Desktops / Laptops) */
+        /* شاشات اللاب توب والحواسب الكبيرة */
         @media (min-width: 768px) { 
           .menu-toggle { display: none; } 
-          .hero-section { flex-direction: row; padding: 60px 24px; gap: 32px; } 
-          .hero-info { width: 50%; text-align: start; align-items: flex-start; } 
+          .hero-section { flex-direction: row; padding: 120px 24px 60px 24px; gap: 40px; text-align: start; } 
+          .hero-info { width: 50%; text-align: inherit; align-items: flex-start; } 
           .hero-cta { justify-content: flex-start; }
           .btn { width: auto; }
           .hero-graphic-container { width: 50%; justify-content: flex-end; } 
-          .interactive-blue-box { max-width: 340px; height: 380px; }
-          .hero-title { font-size: 3rem; } 
+          .interactive-blue-box { max-width: 380px; height: 380px; }
+          .hero-title { font-size: 3.2rem; } 
           .section-header { text-align: start; }
-          .section-header h2 { font-size: 2.25rem; }
+          .section-header h2 { font-size: 2.5rem; }
         }
         
-        /* لشاشات اللاب توب الكبيرة والـ HD */
         @media (min-width: 1024px) { 
-          .hero-title { font-size: 3.5rem; }
+          .hero-title { font-size: 3.8rem; }
         }
         
-        /* التعامل مع القائمة المنبثقة لشاشات الموبايل */
-        @media (max-width: 768px) { 
+        /* تحسينات الموبايل الحصرية لمنع الأبعاد البعيدة أو القفزات غير المتناسقة */
+        @media (max-width: 767px) { 
           .nav-links-desktop { display: none; } 
           .menu-toggle { display: block; } 
           .nav-links-mobile { display: flex; } 
           
-          /* معالجة الـ Grid في الموبايلات الصغيرة لتجنب المساحات الفارغة الزائدة */
           .projects-grid {
             grid-template-columns: 1fr;
+            gap: 20px;
           }
-          .navbar{
-              position: fixed !important;
-              top:0 !important;
-              left:0 !important;
-              width:100% !important;
-              padding: 12px 15px !important;
-              background: #0a0fle !important;
-              z-index:9999;
-              }
-              main{
-              padding-top:60px !important;
-              }
-          
-          .hero-section{
-          min-height: auto !important;
-          padding :60px 12px 15px 12px !important;
-          display: flex !important;
-          flex-direction: row-reverse !important;
-          align-items: flex-start !important;
-          justify-content: space-between !important;
-          gap: 10px !important;
-          text-align: right !important;
-          background:#0a0fle !important;
+
+          .hero-section {
+            padding-top: 90px;
+            min-height: auto;
+            gap: 24px;
           }
-          .hero-text{
-          flex:1;
-          margin-top:0 !important;
+
+          .interactive-blue-box {
+            max-width: 290px;
+            height: 290px;
           }
-          .hero-title{
-          font-size:1.6rem !important;
-          font-weight:800 !important;
-          line-height: 1.2 !important;
-          margin-bottom:8px !important;
-          color:white !important;
-          }
-          .hero-subtitle{
-          font-size:0.85rem !important;
-          color: #60a5fa !important;
-          }
-          .hero-description{
-          font-size:0.8rem !important;
-          line-height: 1.5 !important;
-          margin-bottom:12px !important;
-          color: #cbd5e1 !important;
-          }
-          .hero-buttons{
-          flex-direction: column !important;
-          gap:8px !important;
-          }
-          .hero-buttons a{
-               width: 100% !important;
-               padding: 10px !important;
-               border-radius: 8px !important;
-               font-size: 0.85rem !important;
-          }
-          .projects-section{
-          padding:25px 15px !important;
-          }
-          .interactive-blue-box{
-          max-width:85px !important;
-          height:85px !important;
-          padding:6px !important;
-          margin-top:0 !important;
-          align-self: flex-start !important;
-          flex-shrink:0;
-          }
-          }
-          body,html{
-          overflow-x: hidden;
-          }
-          main{
-          padding-top: 0 !important;
-          margin-top: 0 !important;
         }
       `}</style>
 
@@ -604,9 +545,7 @@ const response = 'JSON Content';`}
             <h4>{t.email}</h4>
             <a href="mailto:abrahymbdh703@gmail.com">abrahymbdh703@gmail.com</a>
           </div>
-
         </div>
-       
       </section>
 
       {/* Footer */}
